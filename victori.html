@@ -136,7 +136,7 @@
             position: relative;
             border-radius: 10px;
             overflow: hidden;
-            touch-action: none; /* Prevents default touch behaviors like scrolling */
+            touch-action: none;
         }
 
         .node {
@@ -159,7 +159,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            user-select: none; /* Prevents text selection during drag */
+            user-select: none;
         }
 
         .node:active {
@@ -537,8 +537,7 @@
             padding: 8px 10px;
             transform: translateY(0) !important;
             transition: none !important;
-            box-sizing: border-box;
-        }
+            box-sizing: border。由
 
         @media (max-width: 768px) {
             .image-caption {
@@ -591,7 +590,9 @@
             <p>ㅤㅤПеретаскивайте узлы, чтобы создать свое дерево памяти. Добавьте новые узлы с помощью формы ниже, с помощью кнопки "Очистить дерево" можно убрать все узлы.</p>
             <div id="tree">
                 <div class="node" style="top: 50px; left: 100px;">Заслонов Константин</div>
-                <div class="node" style="top: 200px; left: 100px;">Талахин Виктор</div>
+                <div class="node" style="top: 150px; left: 200px;">Талахин Виктор</div>
+                <div class="node" style="top: 250px; left: 300px;">Маресьев Алексей</div>
+                <div class="node" style="top: 100px; left: 400px;">Матросов Александр</div>
             </div>
             <div class="add-form">
                 <input type="text" id="nodeName" placeholder="Имя предка">
@@ -602,7 +603,7 @@
             <h3>ㅤㅤПразднование Дня Победы в Беларуси</h3>
             <p>ㅤㅤ</p>
             <p>ㅤㅤ<strong>День Победы (9 мая)</strong> — один из главных государственных праздников Республики Беларусь, установленный Указом Президента <strong>№ 157</strong> от 26 марта 1998 года. Этот день отмечается как нерабочий и посвящен памяти о победе Советского Союза над нацистской Германией в Великой Отечественной войне 1941–1945 годов. Для белорусов он символизирует национальную гордость, дань уважения ветеранам, труженикам тыла, партизанам и всем, кто приближал Победу. Война унесла жизни каждого третьего жителя Беларуси, уничтожив тысячи деревень и городов, но народ выстоял и внес решающий вклад в общую победу.</p>
-            <p>ㅤㅤПразднование сочетает официальные мероприятия, патриотические акции и народные гуляния, подчеркивая темы памяти, единства и мира. </p>
+            <p>ㅤㅤПразднование сочетает официальные мероприятия, патриотические акции и народные гуляния, подчеркивая темы памяти, единства и мира. Вот ключевые аспекты, основанные на описаниях из доступных источников (включая ссылки на Википедию и официальные материалы):</p>
             <p>ㅤㅤУтро начинается с церемоний на мемориалах и у Вечных огней. В Минске президент Александр Лукашенко и официальные лица возлагают цветы у мемориального комплекса "Хатынь" (символ трагедии оккупации) и на площади Победы. По всей стране проходят подобные акции в городах-героях, таких как Минск и Брест.</p>
             <p>ㅤㅤЦентральное событие — парад на площади Победы в Минске под руководством президента. В нем участвуют тысячи военнослужащих, техника, авиация и ветераны. Парад посвящен подвигу белорусского народа, с акцентом на партизанское движение (в Беларуси действовали около 30 партизанских зон).</p>
             <p>ㅤㅤВ 17:55 (по минскому времени) вся страна соблюдает минуту молчания в память о жертвах войны (около 27 млн советских граждан, включая миллионы белорусов).</p>
@@ -658,7 +659,7 @@
 
                 // Mouse events
                 node.addEventListener('mousedown', (e) => {
-                    e.preventDefault(); // Prevent default behavior
+                    e.preventDefault();
                     isDragging = true;
                     startX = e.clientX;
                     startY = e.clientY;
@@ -683,7 +684,7 @@
 
                 // Touch events
                 node.addEventListener('touchstart', (e) => {
-                    e.preventDefault(); // Prevent default touch behavior
+                    e.preventDefault();
                     isDragging = true;
                     const touch = e.touches[0];
                     startX = touch.clientX;
@@ -721,8 +722,8 @@
             const node = document.createElement('div');
             node.className = 'node';
             node.textContent = name;
-            node.style.top = `${Math.random() * 300}px`;
-            node.style.left = `${Math.random() * 600}px`;
+            node.style.top = '50px';
+            node.style.left = '100px';
             const textLength = name.length;
             const width = Math.min(200, Math.max(120, textLength * 10));
             node.style.width = `${width}px`;
